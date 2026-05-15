@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhon Marco Navos</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
         
         body {
@@ -21,9 +23,8 @@
         .container {
             display: grid;
             grid-template-columns: 300px 1fr;
-            height: 100vh;
+            min-height: 100vh;
         }
-        /* SIDEBAR */
         
         .sidebar {
             padding: 20px;
@@ -34,7 +35,7 @@
         }
         
         .profile {
-            text-align: center
+            text-align: center;
         }
         
         .profile img {
@@ -45,11 +46,11 @@
         }
         
         .profile h2 {
-            margin: 10px 0 5px
+            margin: 10px 0 5px;
         }
         /* IMAGE DARK MODE EFFECT */
         
-        .dark .profile img {
+        body.dark .profile img {
             transform: scale(1.08) rotate(-2deg);
             filter: brightness(0.75) contrast(1.2) drop-shadow(0 0 12px #4844b7);
         }
@@ -69,11 +70,13 @@
             border-radius: 10px;
             font-size: 12px;
             margin: 3px;
+            background: #111827;
+            color: white;
         }
         
         .main {
             padding: 20px;
-            overflow-y: auto
+            overflow-y: auto;
         }
         
         .header {
@@ -124,7 +127,7 @@
         }
         
         .project-card .content {
-            padding: 15px
+            padding: 15px;
         }
         
         .section {
@@ -139,41 +142,55 @@
             background: rgb(151, 44, 44);
             padding: 20px;
             border-radius: 16px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+            color: white;
         }
         
         .timeline {
             height: 80px;
-            background: linear-gradient(#fefefe);
+            background: linear-gradient(to right, #fefefe, #d1d5db);
             border-radius: 12px;
+        }
+        
+        .custom-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #111827;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        
+        .custom-btn:hover {
+            background: #374151;
         }
         /* DARK MODE */
         
-        .dark body {
+        body.dark {
             background: linear-gradient(to right, rgb(30, 41, 59), #334155e6);
             color: #e5e7eb;
         }
         
-        .dark .sidebar {
+        body.dark .sidebar {
             background: rgba(30, 41, 59, 0.7);
             border-color: #334155;
         }
         
-        .dark .card,
-        .dark .section,
-        .dark .project-card {
+        body.dark .card,
+        body.dark .section,
+        body.dark .project-card {
             background: #1e293b;
             color: #e5e7eb;
         }
         
-        .dark .search {
+        body.dark .search {
             background: #0f172a;
             color: white;
             border: 1px solid #334155;
         }
         
-        .dark .toggle {
+        body.dark .toggle {
             background: #f9fafb;
             color: black;
         }
@@ -181,13 +198,15 @@
 </head>
 
 <body>
-    <div class="container">
 
+    <div class="container">
         <div class="sidebar">
-            <div class="profile img">
+
+            <div class="profile">
                 <img src="1706702534593.jpg" alt="Profile">
+
                 <h2>Jhon Marco C. Navos</h2>
-                <p>IT STUDENNT</p>
+                <p>IT STUDENT</p>
             </div>
 
             <div class="card">
@@ -197,6 +216,7 @@
 
             <div class="card">
                 <h4>Skills</h4>
+
                 <div class="badge">HTML</div>
                 <div class="badge">CSS</div>
                 <div class="badge">JavaScript</div>
@@ -208,73 +228,80 @@
                 <p>Projects: 12</p>
                 <p>Clients: 5</p>
             </div>
+
         </div>
 
         <div class="main">
-            <div class="header">
 
-                <div>
-                    <button class="toggle" onclick="toggleDark()">🌙 Dark Mode</button>
-                </div>
+            <div class="header">
+                <button class="toggle" onclick="toggleDark()">
+                    🌙 Dark Mode
+                </button>
             </div>
 
             <div class="section">
                 <h2>About Me</h2>
-                <p>I am a passionate developer focused on building modern and interactive web experiences.</p>
+
+                <p>
+                    I am a passionate developer focused on building modern and interactive web experiences.
+                </p>
             </div>
 
             <div class="section">
                 <h2>Activity</h2>
 
-                <a href="A02/index.html" class="btn btn-primary btn-lg">
-        View Assignment A02
-    </a>
+                <a href="A02/index.html" class="custom-btn">
+                    View Assignment A02
+                </a>
+                <a href="A03/index.html" class="custom-btn">
+                    View Assignment A02
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>Projects</h2>
+
+                <div class="dashboard-grid">
+
+                    <div class="project-card">
+
+                        <img src="Untitled1_20260317213950.png" alt="Project">
+
+                        <div class="content">
+                            <h3>Project One</h3>
+                            <p>Typography</p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
             <div class="timeline"></div>
 
-        </div>
+            <div class="section1">
+                <h2>Contact</h2>
 
-            <div class="section">
-                <h2>Projects</h2>
-                <div class="dashboard-grid">
-
-                    <div class="project-card">
-                        <img src="Untitled1_20260317213950.png">
-                        <div class="content">
-                            <h3>Project One</h3>
-                            <p>
-                                Typography</p>
-                        </div>
-
-                    </div>
-                </div>
-
+                <p>Email: navosjhonmarco@gmail.com</p>
+                <p>Facebook | GitHub | LinkedIn</p>
             </div>
 
         </div>
 
-        <div class="section1">
-            <h2>Contact</h2>
-            <p>Email: navosjhonmarco@gmail.com</p>
-            <p>Facebook | GitHub | LinkedIn</p>
-        </div>
-
     </div>
-    </div>
-
-
 
     <script>
         function updateTime() {
             const now = new Date();
-            document.getElementById('time').innerText = now.toLocaleTimeString();
+            document.getElementById('time').innerText =
+                now.toLocaleTimeString();
         }
+
         setInterval(updateTime, 1000);
         updateTime();
 
         function toggleDark() {
-            document.documentElement.classList.toggle('dark');
+            document.body.classList.toggle('dark');
         }
     </script>
 
